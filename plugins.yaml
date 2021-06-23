@@ -2,6 +2,7 @@ approve:
 - lgtm_acts_as_approve: false
   repos:
   - shareinto/lighthouse-config
+  - shareinto/hello
   require_self_approval: true
 config_updater:
   gzip: false
@@ -9,9 +10,18 @@ config_updater:
     config.yaml:
       name: config
     plugins.yaml:
-      name: plugins  
+      name: plugins
+triggers:
+- repos:
+  - shareinto/hello
+  ignore_ok_to_test: false
+  elide_skipped_contexts: false
 plugins:
   shareinto/lighthouse-config:
   - config-updater
   - approve
   - lgtm  
+  shareinto/hello:
+  - approve
+  - lgtm
+  - trigger
