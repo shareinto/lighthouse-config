@@ -20,8 +20,10 @@ plugins:
   shareinto/lighthouse-config:
   - config-updater
   - approve
-  - lgtm  
+  - lgtm 
+  - hold 
   shareinto/hello:
   - approve
   - lgtm
   - trigger
+  - hold
